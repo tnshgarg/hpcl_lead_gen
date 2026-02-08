@@ -1,101 +1,129 @@
 # Knapsack
 
-**Empowering Sales Teams with AI-Driven Intelligence**
+**The AI-Powered Autonomous Sales Intelligence Platform**
 
-Knapsack is an advanced lead generation and sales intelligence platform designed to autonomously hunt, analyze, and qualify high-value sales opportunities from the web. By leveraging Generative AI, semantic search, and real-time web scraping, Knapsack transforms raw data into actionable dossiers for sales officers.
+---
 
-## 👥 Team
-**Knapsack**
+## 👥 Team Knapsack
 
-- **Tanish Garg**
-- **Om Kar Shukla**
-- **Sanchit Garg**
-- **Chinmay Soni**
-- **Aditya Mathur**
+| Name | Role |
+|------|------|
+| **Tanish Garg** | Full Stack & AI Engineer |
+| **Om Kar Shukla** | Backend & DevOps Lead |
+| **Sanchit Garg** | Frontend & UI/UX Architect |
+| **Chinmay Soni** | Mobile App Developer |
+| **Aditya Mathur** | Data Scientist & AI Researcher |
+
+---
+
+## 🚀 Product Vision
+
+In the high-stakes world of enterprise sales, timing is everything. Traditional lead generation is passive, slow, and often inaccurate. Sales teams waste hours sifting through noise to find a single signal.
+
+**Knapsack** changes the game. It is an **autonomous "Lead Hunter"** that never sleeps. By leveraging agentic AI workflows, semantic search, and real-time web intelligence, Knapsack proactively identifies high-value opportunities, analyzes them for intent, and delivers actionable "Intelligence Dossiers" directly to the sales officer's mobile device—often before the news even hits the mainstream.
+
+> **"Don't just find leads. Hunt opportunities."**
+
+---
+
+## 💎 Key Features
+
+### 🧠 Autonomous Web Intelligence (WIL)
+-   **Polyglot Ingestion**: Seamlessly ingests and processes HTML, PDFs (Tenders/Whitepapers), and RSS Feeds.
+-   **Semantic Search**: Uses vector embeddings to understand the *meaning* behind content, finding relevant leads that keyword searches miss.
+-   **Dual-Engine Analysis**: Combines **Gemini 2.0** for intent classification with a specialized **HPCL (High Priority Content Layer)** for detecting critical business signals like funding rounds or expansion plans.
+
+### 📱 Field-Ready Mobile Intelligence
+-   **Real-Time Feed**: A dynamic, TikTok-style feed of high-intent leads customized for each sales officer.
+-   **Smart Dossiers**: Instant access to "Why This Lead?" summaries, competitor analysis, and recommended product pitches.
+-   **One-Tap Action**: Integrated calling, emailing, and calendar scheduling to strike while the iron is hot.
+
+### � Command Center Dashboard
+-   **Pipeline Visibility**: Kanban-style tracking of every lead from discovery to close.
+-   **Performance Analytics**: Deep insights into lead sources, conversion rates, and team performance.
+-   **Granular Control**: Admin tools to manage team assignments and configure intelligence parameters.
 
 ---
 
 ## 🏗️ System Architecture
 
-The Knapsack ecosystem consists of four integrated components:
+Knapsack is built on a modern, microservices-inspired architecture designed for scale and resilience.
 
-### 1. 🧠 Web Intelligence Layer (WIL) - `intelligence/`
-The autonomous "Lead Hunter" engine that powers the platform.
-- **Core Function**: Crawls websites, digests PDFs/RSS feeds, and uses AI to generate comprehensive lead dossiers.
-- **Key Tech**: Node.js, Puppeteer, Qdrant (Vector DB), Gemini 2.0 (LLM), BullMQ.
-- **Features**:
-    -   **Polyglot Ingestion**: Handles HTML, PDF, and RSS.
-    -   **Semantic Understanding**: Vector embeddings for finding leads by *meaning*, not just keywords.
-    -   **HPCL Analyzer**: Specialized High Priority Content Layer for identifying critical business signals (e.g., Tenders, Funding).
+### 1. The Brain: Web Intelligence Layer (`intelligence/`)
+The core engine that powers the platform.
+-   **Technology**: Node.js, TypeScript, Puppeteer, BullMQ, Qdrant (Vector DB).
+-   **The Pipeline**:
+    1.  **Ingestion**: Smart crawling with rate limiting and `robots.txt` compliance.
+    2.  **Normalization**: Boilerplate removal and deduplication (SHA-256).
+    3.  **Embedding**: Vectorizing content for semantic understanding.
+    4.  **Analysis**: Intent classification and Entity Extraction using LLMs.
+    5.  **Scoring**: Multi-factor scoring algorithm (Trust, Freshness, Signal Density).
 
-### 2. 📱 Sales Officer App - `mobile-app/`
-A powerful mobile tool for field sales officers to access intelligence on the go.
-- **Core Function**: Delivers real-time lead alerts and deep intelligence dossiers directly to the sales team.
-- **Key Tech**: React Native, Expo.
-- **Features**:
-    -   **Live Feed**: Real-time stream of qualified leads.
-    -   **Intelligence Dossiers**: "Why This Lead?" analysis, recommended products, and competitor insights.
-    -   **One-Tap Action**: Instant calls, emails, and calendar scheduling.
+### 2. The Spine: Backend API (`backend/`)
+The central nervous system orchestrating data and communications.
+-   **Technology**: Node.js, Express, PostgreSQL, MongoDB.
+-   **Responsibilities**: Authentication (JWT), Data Persistence, API Gateway, and Notification Services (Email/WhatsApp).
 
-### 3. 💻 Web Dashboard - `frontend/`
-The command center for sales managers and admins.
-- **Core Function**: innovative interface for monitoring lead pipelines, analyzing performance, and managing team assignments.
-- **Key Tech**: Next.js, React, Tailwind CSS.
-- **Features**:
-    -   **Data Visualization**: Charts and graphs of lead sources and quality.
-    -   **Pipeline Management**: Kanban-style tracking of lead status.
+### 3. The Face: Web Dashboard (`frontend/`)
+The strategic interface for managers.
+-   **Technology**: Next.js, React, Tailwind CSS.
+-   **Features**: Interactive charts, drag-and-drop pipelines, and responsive design.
 
-### 4. ⚙️ Backend API - `backend/`
-The robust central server orchestrating data flow.
-- **Core Function**: Manages authentication, data persistence, and communication between services.
-- **Key Tech**: Node.js, Express, PostgreSQL, MongoDB.
-- **Features**:
-    -   **Unified API**: Serves both mobile and web clients.
-    -   **Notification Service**: Handles WhatsApp and Email alerts.
+### 4. The Hand: Mobile App (`mobile-app/`)
+The tactical tool for the field.
+-   **Technology**: React Native, Expo.
+-   **Features**: Offline-first architecture, push notifications, and native device integration.
 
 ---
 
-## 🚀 Key Features
+## ⚙️ The Intelligence Pipeline: Under the Hood
 
-- **Autonomous Discovery**: The system finds leads while you sleep.
-- **AI-Powered Analysis**: It doesn't just scrape; it *reads* and *scores* content based on trust, freshness, and relevance.
-- **Smart Dossiers**: Auto-generates executive summaries and "Product-to-Pitch" recommendations.
-- **Real-Time Alerts**: Pushes high-value opportunities to sales officers instantly.
-- **Seamless Integration**: End-to-end flow from web discovery to closed deal.
+How does a URL become a Lead?
+
+1.  **Crawl**: The `Crawler Worker` fetches the page, handling JS rendering if needed.
+2.  **Clean**: The `Normalizer` strips ads and extracts metadata.
+3.  **Understand**: The `Embedder` converts text to vectors.
+4.  **Analyze**: The `Intent Engine` determines if the content is "Signal" or "Noise".
+5.  **Score**: The `Scoring Engine` calculates a holistic score (0-100).
+    -   $$ Score = (Confidence \times 0.3) + (Trust \times 0.2) + (Freshness \times 0.15) + (Signal \times 0.15) + (Similarity \times 0.2) $$
+6.  **Deliver**: If the score exceeds the threshold, a **Dossier** is generated and pushed to the Sales Officer.
 
 ---
 
-## 🛠️ Getting Started
+## 🛠️ Deployment & Setup
 
 ### Prerequisites
-- Node.js (v20+)
-- PostgreSQL & MongoDB
-- Redis (for Queue management)
+-   **Node.js** (v20+)
+-   **Docker** (optional, for DBs)
+-   **PostgreSQL** & **MongoDB**
+-   **Redis** (for Queues)
 
-### Installation
+### Quick Start
 
-1.  **Clone the repository**:
+1.  **Clone the Repo**:
     ```bash
-    git clone https://github.com/your-org/knapsack.git
-    cd knapsack
+    git clone https://github.com/knapsack-team/knapsack.git
     ```
 
-2.  **Start the Services**:
-    Each service (backend, intelligence, frontend, mobile-app) has its own `package.json`.
+2.  **Install Dependencies**:
     ```bash
-    # Terminal 1: Backend
-    cd backend && npm install && npm run dev
+    npm run install:all  # (If configured)
+    # OR manually in each folder:
+    cd backend && npm install
+    cd intelligence && npm install
+    cd frontend && npm install
+    cd mobile-app && npm install
+    ```
 
-    # Terminal 2: Intelligence Layer
-    cd intelligence && npm install && npm run dev
-
-    # Terminal 3: Web Dashboard
-    cd frontend && npm install && npm run dev
-
-    # Terminal 4: Mobile App
-    cd mobile-app && npm install && npx expo start
+3.  **Run Services**:
+    ```bash
+    # Run in separate terminals
+    npm run dev --prefix backend
+    npm run dev --prefix intelligence
+    npm run dev --prefix frontend
+    npx expo start --prefix mobile-app
     ```
 
 ---
 
-*Built with ❤️ by Team Knapsack*
+*© 2026 Team Knapsack. All Rights Reserved.*
