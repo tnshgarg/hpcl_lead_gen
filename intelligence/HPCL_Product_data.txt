@@ -1,0 +1,206 @@
+﻿HPCL Direct Sales – Product Intelligence (Summary Doc)
+Purpose:
+ This document summarizes HPCL’s Direct Sales product portfolio with a strict focus on products, target industries, buying signals, and recommendation logic. It is designed to support the development of a B2B Lead Intelligence Agent for the Productathon.
+________________
+
+
+1. Objective of This Intelligence
+* Identify which HPCL product to pitch
+
+* Detect buying intent signals from public data (tenders, news, websites)
+
+* Map industry → product → confidence score
+
+* Enable explainable product recommendations
+
+________________
+
+
+2. HPCL Direct Sales – Product Buckets
+A. Industrial Fuels
+Product
+	Used For
+	Key Buyer Industries
+	Motor Spirit (Bulk Petrol)
+	Fleet vehicles, petrol gensets
+	Logistics, taxi fleets, rentals
+	High Speed Diesel (HSD)
+	Trucks, DG sets, machinery
+	Transport, mining, construction, CPP
+	Light Diesel Oil (LDO)
+	Medium-speed engines
+	Marine (small vessels), furnaces
+	Furnace Oil (FO)
+	Boilers, kilns, furnaces
+	Cement, steel, chemicals, textiles
+	LSHS
+	Low-sulphur heavy fuel
+	Fertilizers, CPPs, regulated zones
+	Superior Kerosene Oil (SKO)
+	Solvent / feedstock
+	Chemicals, paints, metal cleaning
+	________________
+
+
+B. Specialty Solvents & Oils
+Product
+	Primary Use
+	Key Industries
+	Hexane (Food/Tech)
+	Oil extraction, pharma extraction
+	Edible oil, pharma, oleochemicals
+	Solvent 1425
+	Resin & polymer dissolving
+	Paints, inks, coatings
+	Mineral Turpentine Oil (MTO)
+	Thinner, cleaning
+	Paints, fabrication
+	Jute Batch Oil (JBO)
+	Softening jute fiber
+	Jute mills (WB, East India)
+	________________
+
+
+C. Infrastructure, Marine & Petrochemicals
+Product
+	Used In
+	Buyers
+	Bitumen
+	Roads, waterproofing
+	NHAI, PWD, contractors
+	Marine Fuels (MGO/LSFO)
+	Ship bunkering
+	Shipping companies, ports
+	Sulphur
+	Fertilizer & acid plants
+	Fertilizer manufacturers
+	Propylene
+	Polymer feedstock
+	PP & petrochemical plants
+	________________
+
+
+3. Industry → Product Mapping (Core Logic)
+Industry
+	Primary HPCL Products
+	Edible Oil Extraction
+	Hexane (Food Grade)
+	Jute Processing
+	JBO
+	Paints & Coatings
+	Solvent 1425, MTO, Hexane
+	Captive Power Plants
+	FO, LSHS, HSD
+	Road Construction
+	Bitumen
+	Shipping & Ports
+	Marine Fuels
+	Fertilizers
+	LSHS, Sulphur
+	Cement
+	FO, LSHS
+	Pharma
+	Hexane (Tech)
+	Steel Re-rolling
+	FO
+	Plastics & Polymers
+	Propylene
+	________________
+
+
+4. Signal Taxonomy (What the Agent Detects)
+1. Explicit Procurement Signals (High Confidence)
+   * Tenders
+
+   * EOIs
+
+   * RFQs
+
+Examples:
+ "Tender for supply of HSD"
+ "Procurement of Food Grade Hexane"
+________________
+
+
+2. Implicit Demand Signals (Medium Confidence)
+      * Capacity expansion
+
+      * New plant / boiler / kiln
+
+      * New road or port project
+
+Examples:
+ "Company announces 20 MW captive power expansion"
+ "New solvent extraction unit announced"
+________________
+
+
+3. Operational Signals (Low–Medium Confidence)
+         * Company profile info
+
+         * Fleet size
+
+         * Industry listing
+
+Examples:
+ "Manufacturer of industrial paints"
+ "Operates 200+ trucks"
+________________
+
+
+5. Product Recommendation Logic (Explainable)
+Step-by-Step Flow
+            1. Extract keywords from text
+
+            2. Identify industry
+
+            3. Map industry → HPCL product
+
+            4. Apply heuristics
+
+            5. Output Top-3 products + confidence
+
+________________
+
+
+Scoring Heuristics
+               * Explicit tender > expansion news > static profile
+
+               * Recent signal scores higher
+
+               * Larger company = higher volume potential
+
+________________
+
+
+6. Sample Recommendation Output (Agent Style)
+Detected Signal:
+“Tender for supply of Food Grade Hexane for Solvent Extraction Plant”
+Recommended Products:
+                  1. Hexane (Food Grade) – Primary match
+
+                  2. MTO – Maintenance & cleaning
+
+                  3. HSD – DG sets & logistics
+
+Confidence: 90+
+Reason: Explicit tender + industry match + recurring demand
+________________
+
+
+7. Why This Matters for Productathon
+                     * Clean signal → product mapping
+
+                     * Fully rule-based & explainable
+
+                     * Works with news, tenders, websites
+
+                     * No dependency on private data
+
+                     * Easy to convert into agent prompts / pipelines
+
+________________
+
+
+8. One-Line TL;DR
+“Detect industry signals → map to HPCL Direct Sales products → score confidence → recommend top 3 fuels or solvents with clear reasoning.”

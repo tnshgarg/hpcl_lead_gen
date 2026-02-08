@@ -1,0 +1,55 @@
+
+> web-intelligence-layer@1.0.0 dev
+> tsx watch src/index.ts
+
+08:19:07 [32minfo[39m [89fed313]: Starting Web Intelligence Layer... {"service":"web-intelligence-layer","traceId":"4a7956af-756c-4da3-b3d7-3be31768e507"}
+08:19:07 [32minfo[39m [89fed313]: Initializing infrastructure... {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: PostgreSQL connection pool initialized {"service":"web-intelligence-layer","host":"localhost","port":5432,"database":"web_intelligence"}
+08:19:07 [32minfo[39m [89fed313]: PostgreSQL connected {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Redis connected {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Qdrant client initialized {"service":"web-intelligence-layer","host":"127.0.0.1","port":6333}
+08:19:07 [32minfo[39m [89fed313]: Qdrant client initialized {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Waiting for Qdrant (attempt 1/30)... {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Redis client connected {"service":"web-intelligence-layer","host":"localhost","port":6379}
+08:19:07 [32minfo[39m [89fed313]: Qdrant is ready {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Running database migrations... {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: All migrations completed {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Database migrations completed {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Vector store initialized {"service":"web-intelligence-layer","collection":"documents","dimension":384}
+08:19:07 [32minfo[39m [89fed313]: Vector store initialized {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Registering default prompt templates {"service":"web-intelligence-layer","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad"}
+08:19:07 [32minfo[39m [89fed313]: Creating prompt template {"service":"web-intelligence-layer","name":"intent-analysis","version":"v1.0.0","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad"}
+08:19:07 [33mwarn[39m [89fed313]: Non-retryable error encountered {"service":"web-intelligence-layer","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+08:19:07 [33mwarn[39m [89fed313]: Failed to store prompt in database, using cache only {"service":"web-intelligence-layer","name":"intent-analysis","error":"duplicate key value violates unique constraint \"prompts_name_version_key\"","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad"}
+08:19:07 [32minfo[39m [89fed313]: Prompt template created {"service":"web-intelligence-layer","id":"5eeec81b-8bf0-416f-b0d8-e4dd3c7520d2","name":"intent-analysis","version":"v1.0.0","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad"}
+08:19:07 [32minfo[39m [89fed313]: Creating prompt template {"service":"web-intelligence-layer","name":"relevance-scoring","version":"v1.0.0","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad"}
+08:19:07 [33mwarn[39m [89fed313]: Non-retryable error encountered {"service":"web-intelligence-layer","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+08:19:07 [33mwarn[39m [89fed313]: Failed to store prompt in database, using cache only {"service":"web-intelligence-layer","name":"relevance-scoring","error":"duplicate key value violates unique constraint \"prompts_name_version_key\"","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad"}
+08:19:07 [32minfo[39m [89fed313]: Prompt template created {"service":"web-intelligence-layer","id":"009580ad-2f4d-4497-af9e-f5a117efede4","name":"relevance-scoring","version":"v1.0.0","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad"}
+08:19:07 [32minfo[39m [89fed313]: Creating prompt template {"service":"web-intelligence-layer","name":"summarization","version":"v1.0.0","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad"}
+08:19:07 [33mwarn[39m [89fed313]: Non-retryable error encountered {"service":"web-intelligence-layer","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+08:19:07 [33mwarn[39m [89fed313]: Failed to store prompt in database, using cache only {"service":"web-intelligence-layer","name":"summarization","error":"duplicate key value violates unique constraint \"prompts_name_version_key\"","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad"}
+08:19:07 [32minfo[39m [89fed313]: Prompt template created {"service":"web-intelligence-layer","id":"fc047b7c-b4ac-48d6-bd5d-c3434ce113c8","name":"summarization","version":"v1.0.0","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad"}
+08:19:07 [32minfo[39m [89fed313]: Default prompt templates registered {"service":"web-intelligence-layer","traceId":"89fed313-9938-4c9a-92b6-dfccbefc31ad"}
+08:19:07 [32minfo[39m [89fed313]: Default prompts registered {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Infrastructure initialization complete {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Starting services... {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Queue created {"service":"web-intelligence-layer","queueName":"crawl"}
+08:19:07 [32minfo[39m [89fed313]: Queue created {"service":"web-intelligence-layer","queueName":"normalize"}
+08:19:07 [32minfo[39m [89fed313]: Queue created {"service":"web-intelligence-layer","queueName":"embed"}
+08:19:07 [32minfo[39m [89fed313]: Queue created {"service":"web-intelligence-layer","queueName":"analyze"}
+08:19:07 [32minfo[39m [89fed313]: Pipeline queues initialized {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Pipeline queues initialized {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Worker created {"service":"web-intelligence-layer","queueName":"crawl","concurrency":10}
+08:19:07 [32minfo[39m [89fed313]: Worker created {"service":"web-intelligence-layer","queueName":"normalize","concurrency":10}
+08:19:07 [32minfo[39m [89fed313]: Worker created {"service":"web-intelligence-layer","queueName":"embed","concurrency":2}
+08:19:07 [32minfo[39m [89fed313]: Worker created {"service":"web-intelligence-layer","queueName":"analyze","concurrency":2}
+08:19:07 [32minfo[39m [89fed313]: Pipeline workers started {"service":"web-intelligence-layer","concurrency":10}
+08:19:07 [32minfo[39m [89fed313]: Pipeline workers started {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Worker created {"service":"web-intelligence-layer","queueName":"dead-letter","concurrency":1}
+08:19:07 [32minfo[39m [89fed313]: Dead-letter worker initialized {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Dead letter worker started {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: API server started on port 3000 {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: All services started {"service":"web-intelligence-layer"}
+08:19:07 [32minfo[39m [89fed313]: Web Intelligence Layer is running {"service":"web-intelligence-layer","port":3000,"environment":"development","traceId":"4a7956af-756c-4da3-b3d7-3be31768e507"}
+08:19:07 [32minfo[39m [89fed313]: API server started on http://0.0.0.0:3000/api/v1 {"service":"web-intelligence-layer"}

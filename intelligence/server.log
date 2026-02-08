@@ -1,0 +1,105 @@
+04:57:20 [32minfo[39m [fbde9893]: Starting Web Intelligence Layer... {"service":"web-intelligence-layer","traceId":"d672bb1b-1881-41d7-85cf-f5f2d8e7f508"}
+04:57:20 [32minfo[39m [fbde9893]: Initializing infrastructure... {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: PostgreSQL connection pool initialized {"service":"web-intelligence-layer","host":"localhost","port":5432,"database":"web_intelligence"}
+04:57:20 [32minfo[39m [fbde9893]: PostgreSQL connected {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Redis connected {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Qdrant client initialized {"service":"web-intelligence-layer","host":"127.0.0.1","port":6333}
+04:57:20 [32minfo[39m [fbde9893]: Qdrant client initialized {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Waiting for Qdrant (attempt 1/30)... {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Redis client connected {"service":"web-intelligence-layer","host":"localhost","port":6379}
+04:57:20 [32minfo[39m [fbde9893]: Qdrant is ready {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Running database migrations... {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: All migrations completed {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Database migrations completed {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Vector store initialized {"service":"web-intelligence-layer","collection":"documents","dimension":384}
+04:57:20 [32minfo[39m [fbde9893]: Vector store initialized {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Registering default prompt templates {"service":"web-intelligence-layer","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86"}
+04:57:20 [32minfo[39m [fbde9893]: Creating prompt template {"service":"web-intelligence-layer","name":"intent-analysis","version":"v1.0.0","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86"}
+04:57:20 [33mwarn[39m [fbde9893]: Non-retryable error encountered {"service":"web-intelligence-layer","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+04:57:20 [33mwarn[39m [fbde9893]: Failed to store prompt in database, using cache only {"service":"web-intelligence-layer","name":"intent-analysis","error":"duplicate key value violates unique constraint \"prompts_name_version_key\"","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86"}
+04:57:20 [32minfo[39m [fbde9893]: Prompt template created {"service":"web-intelligence-layer","id":"d7ad00b7-04ad-478b-8e95-2b65c01ddc2f","name":"intent-analysis","version":"v1.0.0","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86"}
+04:57:20 [32minfo[39m [fbde9893]: Creating prompt template {"service":"web-intelligence-layer","name":"relevance-scoring","version":"v1.0.0","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86"}
+04:57:20 [33mwarn[39m [fbde9893]: Non-retryable error encountered {"service":"web-intelligence-layer","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+04:57:20 [33mwarn[39m [fbde9893]: Failed to store prompt in database, using cache only {"service":"web-intelligence-layer","name":"relevance-scoring","error":"duplicate key value violates unique constraint \"prompts_name_version_key\"","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86"}
+04:57:20 [32minfo[39m [fbde9893]: Prompt template created {"service":"web-intelligence-layer","id":"1164bf85-d68e-4f91-b189-cb54dcb8f677","name":"relevance-scoring","version":"v1.0.0","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86"}
+04:57:20 [32minfo[39m [fbde9893]: Creating prompt template {"service":"web-intelligence-layer","name":"summarization","version":"v1.0.0","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86"}
+04:57:20 [33mwarn[39m [fbde9893]: Non-retryable error encountered {"service":"web-intelligence-layer","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+04:57:20 [33mwarn[39m [fbde9893]: Failed to store prompt in database, using cache only {"service":"web-intelligence-layer","name":"summarization","error":"duplicate key value violates unique constraint \"prompts_name_version_key\"","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86"}
+04:57:20 [32minfo[39m [fbde9893]: Prompt template created {"service":"web-intelligence-layer","id":"0431029f-acd5-4ec6-b25e-14472f3d9714","name":"summarization","version":"v1.0.0","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86"}
+04:57:20 [32minfo[39m [fbde9893]: Default prompt templates registered {"service":"web-intelligence-layer","traceId":"fbde9893-a638-4e10-be52-6bb7ec4dfb86"}
+04:57:20 [32minfo[39m [fbde9893]: Default prompts registered {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Infrastructure initialization complete {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Starting services... {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Queue created {"service":"web-intelligence-layer","queueName":"crawl"}
+04:57:20 [32minfo[39m [fbde9893]: Queue created {"service":"web-intelligence-layer","queueName":"normalize"}
+04:57:20 [32minfo[39m [fbde9893]: Queue created {"service":"web-intelligence-layer","queueName":"embed"}
+04:57:20 [32minfo[39m [fbde9893]: Queue created {"service":"web-intelligence-layer","queueName":"analyze"}
+04:57:20 [32minfo[39m [fbde9893]: Pipeline queues initialized {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Pipeline queues initialized {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Worker created {"service":"web-intelligence-layer","queueName":"crawl","concurrency":10}
+04:57:20 [32minfo[39m [fbde9893]: Worker created {"service":"web-intelligence-layer","queueName":"normalize","concurrency":10}
+04:57:20 [32minfo[39m [fbde9893]: Worker created {"service":"web-intelligence-layer","queueName":"embed","concurrency":2}
+04:57:20 [32minfo[39m [fbde9893]: Worker created {"service":"web-intelligence-layer","queueName":"analyze","concurrency":2}
+04:57:20 [32minfo[39m [fbde9893]: Pipeline workers started {"service":"web-intelligence-layer","concurrency":10}
+04:57:20 [32minfo[39m [fbde9893]: Pipeline workers started {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Worker created {"service":"web-intelligence-layer","queueName":"dead-letter","concurrency":1}
+04:57:20 [32minfo[39m [fbde9893]: Dead-letter worker initialized {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Dead letter worker started {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: API server started on port 3002 {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: All services started {"service":"web-intelligence-layer"}
+04:57:20 [32minfo[39m [fbde9893]: Web Intelligence Layer is running {"service":"web-intelligence-layer","port":3002,"environment":"development","traceId":"d672bb1b-1881-41d7-85cf-f5f2d8e7f508"}
+04:57:20 [32minfo[39m [fbde9893]: API server started on http://0.0.0.0:3002/api/v1 {"service":"web-intelligence-layer"}
+04:57:35 [32minfo[39m [e69e8718]: API response {"service":"web-intelligence-layer","method":"GET","path":"/health","status":200,"durationMs":71,"traceId":"e69e8718-5f0b-4ab2-bc05-82a9a3e38a07"}
+04:57:35 [32minfo[39m [205632a5]: Job added to queue {"service":"web-intelligence-layer","queueName":"crawl","jobName":"crawl","jobId":"1388"}
+04:57:35 [32minfo[39m [205632a5]: URL submitted for processing {"service":"web-intelligence-layer","url":"https://economictimes.indiatimes.com/industry/rssfeeds/13352306.cms","jobId":"1388"}
+04:57:35 [32minfo[39m [205632a5]: API response {"service":"web-intelligence-layer","method":"POST","path":"/jobs/scrape","status":202,"durationMs":23,"traceId":"205632a5-e8d7-4a85-9ab9-bdc58e0036ba"}
+04:57:35 [32minfo[39m [9702b892]: API response {"service":"web-intelligence-layer","method":"GET","path":"/dossiers","status":200,"durationMs":61,"traceId":"9702b892-e5ee-4188-aa75-67e6f74e9c3c"}
+04:57:35 [32minfo[39m [b10e5469]: API response {"service":"web-intelligence-layer","method":"POST","path":"/dossiers/d97cb224-769d-4309-8acf-f645dadaae81/consume","status":200,"durationMs":14,"traceId":"b10e5469-5a0c-44e2-974f-8c1d7356366d"}
+04:57:35 [32minfo[39m [d36747ce]: API response {"service":"web-intelligence-layer","method":"GET","path":"/dossiers","status":200,"durationMs":2,"traceId":"d36747ce-b211-489a-8fbf-c6397fb2e284"}
+04:57:35 [32minfo[39m [c5f41a51]: API response {"service":"web-intelligence-layer","method":"GET","path":"/logs/stream","status":200,"durationMs":1,"traceId":"c5f41a51-cca4-4154-a371-e5de96e3664e"}
+04:57:35 [32minfo[39m [924]: Job processing started {"service":"web-intelligence-layer","queueName":"normalize","jobName":"normalize","jobId":"924","attempt":1}
+04:57:35 [32minfo[39m [f34f3320]: Processing normalize job {"service":"web-intelligence-layer","jobId":"924","url":"https://economictimes.indiatimes.com/industry/rssfeeds/13352306.cms","traceId":"f34f3320-69a8-45f7-82f9-947b97af3757"}
+04:57:35 [32minfo[39m [f34f3320]: Job added to queue {"service":"web-intelligence-layer","queueName":"embed","jobName":"embed","jobId":"725"}
+04:57:35 [32minfo[39m [f34f3320]: Normalize job completed {"service":"web-intelligence-layer","jobId":"924","documentId":"564d963b-432a-4384-8aa1-8b8972995756","wordCount":1192,"traceId":"f34f3320-69a8-45f7-82f9-947b97af3757"}
+04:57:35 [32minfo[39m [924]: Job processing completed {"service":"web-intelligence-layer","queueName":"normalize","jobName":"normalize","jobId":"924","duration":94}
+04:57:35 [32minfo[39m [725]: Job processing started {"service":"web-intelligence-layer","queueName":"embed","jobName":"embed","jobId":"725","attempt":1}
+04:57:35 [32minfo[39m [0af4e332]: Processing embed job {"service":"web-intelligence-layer","jobId":"725","documentId":"564d963b-432a-4384-8aa1-8b8972995756","traceId":"0af4e332-82e8-4c10-8df9-c7293318f251"}
+04:57:35 [32minfo[39m [0af4e332]: Initializing embedding pipeline... {"service":"web-intelligence-layer","model":"Xenova/multilingual-e5-small"}
+04:57:36 [32minfo[39m [0af4e332]: Embedding pipeline initialized {"service":"web-intelligence-layer","model":"Xenova/multilingual-e5-small"}
+04:57:36 [32minfo[39m [0af4e332]: Artifact created {"service":"web-intelligence-layer","artifactType":"embedding","artifactId":"1dd3cb7c-1fc1-44a7-9a14-e32b7c64e6e5","inputHash":"be5238c02c884b18","outputHash":"1dd3cb7c-1fc1-44","model":"Xenova/multilingual-e5-small","dimension":384,"durationMs":991}
+04:57:36 [32minfo[39m [0af4e332]: Artifact created {"service":"web-intelligence-layer","artifactType":"vector-store","artifactId":"564d963b-432a-4384-8aa1-8b8972995756","inputHash":"564d963b-432a-43","outputHash":"1dd3cb7c-1fc1-44","modelVersion":"Xenova/multilingual-e5-small","dimension":384,"durationMs":1134}
+04:57:36 [32minfo[39m [0af4e332]: Document embedding stored {"service":"web-intelligence-layer","documentId":"564d963b-432a-4384-8aa1-8b8972995756","modelVersion":"Xenova/multilingual-e5-small","durationMs":1134,"traceId":"0af4e332-82e8-4c10-8df9-c7293318f251"}
+04:57:36 [32minfo[39m [0af4e332]: Job added to queue {"service":"web-intelligence-layer","queueName":"analyze","jobName":"analyze","jobId":"725"}
+04:57:36 [32minfo[39m [0af4e332]: Embed job completed {"service":"web-intelligence-layer","jobId":"725","documentId":"564d963b-432a-4384-8aa1-8b8972995756","traceId":"0af4e332-82e8-4c10-8df9-c7293318f251"}
+04:57:36 [32minfo[39m [725]: Job processing completed {"service":"web-intelligence-layer","queueName":"embed","jobName":"embed","jobId":"725","duration":1149}
+04:57:42 [32minfo[39m [60f7bc88]: API response {"service":"web-intelligence-layer","method":"GET","path":"/health","status":200,"durationMs":27,"traceId":"60f7bc88-1af9-4454-9142-63eb25b58e7e"}
+04:57:42 [32minfo[39m [b5fcd406]: Job added to queue {"service":"web-intelligence-layer","queueName":"crawl","jobName":"crawl","jobId":"1389"}
+04:57:42 [32minfo[39m [b5fcd406]: URL submitted for processing {"service":"web-intelligence-layer","url":"https://economictimes.indiatimes.com/industry/rssfeeds/13352306.cms","jobId":"1389"}
+04:57:42 [32minfo[39m [b5fcd406]: API response {"service":"web-intelligence-layer","method":"POST","path":"/jobs/scrape","status":202,"durationMs":4,"traceId":"b5fcd406-aff8-44f8-8785-a4852eea0251"}
+04:57:42 [32minfo[39m [24fcbe88]: API response {"service":"web-intelligence-layer","method":"GET","path":"/dossiers","status":200,"durationMs":7,"traceId":"24fcbe88-2318-4050-b925-9235ed9ecb73"}
+04:57:42 [32minfo[39m [b47bb84b]: API response {"service":"web-intelligence-layer","method":"POST","path":"/dossiers/d97cb224-769d-4309-8acf-f645dadaae81/consume","status":200,"durationMs":5,"traceId":"b47bb84b-c6fd-4e48-8024-daf047599597"}
+04:57:42 [32minfo[39m [3d55133f]: API response {"service":"web-intelligence-layer","method":"GET","path":"/dossiers","status":200,"durationMs":2,"traceId":"3d55133f-1aef-422b-b7c4-e96917be8905"}
+04:57:42 [32minfo[39m [8123599d]: API response {"service":"web-intelligence-layer","method":"GET","path":"/logs/stream","status":200,"durationMs":1,"traceId":"8123599d-b083-4ecd-a118-a4f0d51232a1"}
+04:57:48 [32minfo[39m [726]: Job processing started {"service":"web-intelligence-layer","queueName":"analyze","jobName":"analyze","jobId":"726","attempt":1}
+04:57:48 [32minfo[39m [7376657e]: Processing analyze job {"service":"web-intelligence-layer","jobId":"726","documentId":"63c12863-53a8-4be0-828b-63ce270bb758","traceId":"7376657e-6d98-4bfe-9095-56f0cd6e3eee"}
+04:57:48 [31merror[39m [7376657e]: Analyze job failed {"service":"web-intelligence-layer","jobId":"726","documentId":"63c12863-53a8-4be0-828b-63ce270bb758","error":"Document not found: 63c12863-53a8-4be0-828b-63ce270bb758","traceId":"7376657e-6d98-4bfe-9095-56f0cd6e3eee"}
+04:57:48 [31merror[39m [726]: Job processing failed {"service":"web-intelligence-layer","queueName":"analyze","jobName":"analyze","jobId":"726","duration":2,"error":"Document not found: 63c12863-53a8-4be0-828b-63ce270bb758","stack":"Error: Document not found: 63c12863-53a8-4be0-828b-63ce270bb758\n    at <anonymous> (/Users/tanish/Documents/WIL/src/pipeline/workers.ts:394:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at processAnalyzeJob (/Users/tanish/Documents/WIL/src/pipeline/workers.ts:374:3)\n    at withTrace.queueName.queueName (/Users/tanish/Documents/WIL/src/queue/bullmq.ts:135:28)\n    at <anonymous> (/Users/tanish/Documents/WIL/node_modules/bullmq/src/classes/worker.ts:997:26)"}
+04:57:48 [33mwarn[39m [fbde9893]: Worker job failed {"service":"web-intelligence-layer","jobId":"726","jobName":"analyze","error":"Document not found: 63c12863-53a8-4be0-828b-63ce270bb758","attempts":1}
+04:57:53 [32minfo[39m [726]: Job processing started {"service":"web-intelligence-layer","queueName":"analyze","jobName":"analyze","jobId":"726","attempt":2}
+04:57:53 [32minfo[39m [939222cc]: Processing analyze job {"service":"web-intelligence-layer","jobId":"726","documentId":"63c12863-53a8-4be0-828b-63ce270bb758","traceId":"939222cc-35a7-457a-8b23-e76158b70249"}
+04:57:53 [31merror[39m [939222cc]: Analyze job failed {"service":"web-intelligence-layer","jobId":"726","documentId":"63c12863-53a8-4be0-828b-63ce270bb758","error":"Document not found: 63c12863-53a8-4be0-828b-63ce270bb758","traceId":"939222cc-35a7-457a-8b23-e76158b70249"}
+04:57:53 [31merror[39m [726]: Job processing failed {"service":"web-intelligence-layer","queueName":"analyze","jobName":"analyze","jobId":"726","duration":7,"error":"Document not found: 63c12863-53a8-4be0-828b-63ce270bb758","stack":"Error: Document not found: 63c12863-53a8-4be0-828b-63ce270bb758\n    at <anonymous> (/Users/tanish/Documents/WIL/src/pipeline/workers.ts:394:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at processAnalyzeJob (/Users/tanish/Documents/WIL/src/pipeline/workers.ts:374:3)\n    at withTrace.queueName.queueName (/Users/tanish/Documents/WIL/src/queue/bullmq.ts:135:28)\n    at <anonymous> (/Users/tanish/Documents/WIL/node_modules/bullmq/src/classes/worker.ts:997:26)"}
+04:57:53 [33mwarn[39m [fbde9893]: Worker job failed {"service":"web-intelligence-layer","jobId":"726","jobName":"analyze","error":"Document not found: 63c12863-53a8-4be0-828b-63ce270bb758","attempts":2}
+04:58:00 [32minfo[39m: Received SIGTERM. Starting graceful shutdown... {"service":"web-intelligence-layer"}
+04:58:00 [32minfo[39m: API server stopped {"service":"web-intelligence-layer"}
+04:58:00 [32minfo[39m: API server stopped {"service":"web-intelligence-layer"}
+04:58:00 [32minfo[39m: Shutting down pipeline... {"service":"web-intelligence-layer"}
+04:58:00 [32minfo[39m: Closing all queues and workers... {"service":"web-intelligence-layer"}
+04:58:00 [32minfo[39m: All queues and workers closed {"service":"web-intelligence-layer"}
+04:58:00 [32minfo[39m: Pipeline shutdown complete {"service":"web-intelligence-layer"}
+04:58:00 [32minfo[39m: Pipeline workers stopped {"service":"web-intelligence-layer"}
+04:58:00 [32minfo[39m: PostgreSQL connection pool closed {"service":"web-intelligence-layer"}
+04:58:00 [32minfo[39m: PostgreSQL connection closed {"service":"web-intelligence-layer"}
+04:58:00 [32minfo[39m: Redis client closed {"service":"web-intelligence-layer"}
+04:58:00 [32minfo[39m: Redis connection closed {"service":"web-intelligence-layer"}
+04:58:00 [32minfo[39m: Graceful shutdown complete {"service":"web-intelligence-layer"}

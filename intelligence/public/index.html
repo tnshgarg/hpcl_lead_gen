@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Intelligence Layer - Dossier Generator</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Web Intelligence Layer</h1>
+            <p>Enter a URL to generate a comprehensive intelligence dossier.</p>
+        </header>
+
+        <section class="input-section">
+            <form id="urlForm">
+                <input type="url" id="urlInput" placeholder="https://example.com/article" required>
+                <select id="sourceType">
+                    <option value="html">HTML Page</option>
+                    <option value="pdf">PDF Document</option>
+                    <option value="rss">RSS Feed</option>
+                </select>
+                <button type="submit">Generate Dossier</button>
+            </form>
+            <div id="statusMessage" class="hidden"></div>
+        </section>
+
+        <section class="results-section">
+            <h2>Generated Dossiers</h2>
+            <button id="refreshBtn">Refresh List</button>
+            <div id="dossierList" class="dossier-grid">
+                <!-- Dossier cards will be injected here -->
+                <p class="empty-state">No dossiers generated yet. Submit a URL above.</p>
+            </div>
+        </section>
+
+        <div id="dossierModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/app.js"></script>
+</body>
+</html>

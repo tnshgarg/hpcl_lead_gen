@@ -1,0 +1,74 @@
+
+> web-intelligence-layer@1.0.0 dev
+> tsx watch src/index.ts
+
+08:21:53 [32minfo[39m [cb9be3b0]: Starting Web Intelligence Layer... {"service":"web-intelligence-layer","traceId":"1bb1f50b-ec52-4254-afe3-2084a63e876f"}
+08:21:53 [32minfo[39m [cb9be3b0]: Initializing infrastructure... {"service":"web-intelligence-layer"}
+08:21:53 [32minfo[39m [cb9be3b0]: PostgreSQL connection pool initialized {"service":"web-intelligence-layer","host":"localhost","port":5432,"database":"web_intelligence"}
+08:21:53 [32minfo[39m [cb9be3b0]: PostgreSQL connected {"service":"web-intelligence-layer"}
+08:21:53 [32minfo[39m [cb9be3b0]: Redis connected {"service":"web-intelligence-layer"}
+08:21:53 [32minfo[39m [cb9be3b0]: Qdrant client initialized {"service":"web-intelligence-layer","host":"127.0.0.1","port":6333}
+08:21:53 [32minfo[39m [cb9be3b0]: Qdrant client initialized {"service":"web-intelligence-layer"}
+08:21:53 [32minfo[39m [cb9be3b0]: Waiting for Qdrant (attempt 1/30)... {"service":"web-intelligence-layer"}
+08:21:53 [32minfo[39m [cb9be3b0]: Redis client connected {"service":"web-intelligence-layer","host":"localhost","port":6379}
+08:21:54 [32minfo[39m [cb9be3b0]: Qdrant is ready {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: Running database migrations... {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: All migrations completed {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: Database migrations completed {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: Vector store initialized {"service":"web-intelligence-layer","collection":"documents","dimension":384}
+08:21:54 [32minfo[39m [cb9be3b0]: Vector store initialized {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: Registering default prompt templates {"service":"web-intelligence-layer","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d"}
+08:21:54 [32minfo[39m [cb9be3b0]: Creating prompt template {"service":"web-intelligence-layer","name":"intent-analysis","version":"v1.0.0","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d"}
+08:21:54 [33mwarn[39m [cb9be3b0]: Non-retryable error encountered {"service":"web-intelligence-layer","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+08:21:54 [33mwarn[39m [cb9be3b0]: Failed to store prompt in database, using cache only {"service":"web-intelligence-layer","name":"intent-analysis","error":"duplicate key value violates unique constraint \"prompts_name_version_key\"","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d"}
+08:21:54 [32minfo[39m [cb9be3b0]: Prompt template created {"service":"web-intelligence-layer","id":"39749952-fe6d-4f49-8768-7bd643cb399c","name":"intent-analysis","version":"v1.0.0","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d"}
+08:21:54 [32minfo[39m [cb9be3b0]: Creating prompt template {"service":"web-intelligence-layer","name":"relevance-scoring","version":"v1.0.0","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d"}
+08:21:54 [33mwarn[39m [cb9be3b0]: Non-retryable error encountered {"service":"web-intelligence-layer","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+08:21:54 [33mwarn[39m [cb9be3b0]: Failed to store prompt in database, using cache only {"service":"web-intelligence-layer","name":"relevance-scoring","error":"duplicate key value violates unique constraint \"prompts_name_version_key\"","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d"}
+08:21:54 [32minfo[39m [cb9be3b0]: Prompt template created {"service":"web-intelligence-layer","id":"85ee83e5-06d3-4658-83e8-6800cfe252de","name":"relevance-scoring","version":"v1.0.0","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d"}
+08:21:54 [32minfo[39m [cb9be3b0]: Creating prompt template {"service":"web-intelligence-layer","name":"summarization","version":"v1.0.0","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d"}
+08:21:54 [33mwarn[39m [cb9be3b0]: Non-retryable error encountered {"service":"web-intelligence-layer","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+08:21:54 [33mwarn[39m [cb9be3b0]: Failed to store prompt in database, using cache only {"service":"web-intelligence-layer","name":"summarization","error":"duplicate key value violates unique constraint \"prompts_name_version_key\"","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d"}
+08:21:54 [32minfo[39m [cb9be3b0]: Prompt template created {"service":"web-intelligence-layer","id":"30d4ef64-67d8-435c-9042-6480072a90d9","name":"summarization","version":"v1.0.0","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d"}
+08:21:54 [32minfo[39m [cb9be3b0]: Default prompt templates registered {"service":"web-intelligence-layer","traceId":"cb9be3b0-12d9-4272-9d1c-c5527309841d"}
+08:21:54 [32minfo[39m [cb9be3b0]: Default prompts registered {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: Infrastructure initialization complete {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: Starting services... {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: Queue created {"service":"web-intelligence-layer","queueName":"crawl"}
+08:21:54 [32minfo[39m [cb9be3b0]: Queue created {"service":"web-intelligence-layer","queueName":"normalize"}
+08:21:54 [32minfo[39m [cb9be3b0]: Queue created {"service":"web-intelligence-layer","queueName":"embed"}
+08:21:54 [32minfo[39m [cb9be3b0]: Queue created {"service":"web-intelligence-layer","queueName":"analyze"}
+08:21:54 [32minfo[39m [cb9be3b0]: Pipeline queues initialized {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: Pipeline queues initialized {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: Worker created {"service":"web-intelligence-layer","queueName":"crawl","concurrency":10}
+08:21:54 [32minfo[39m [cb9be3b0]: Worker created {"service":"web-intelligence-layer","queueName":"normalize","concurrency":10}
+08:21:54 [32minfo[39m [cb9be3b0]: Worker created {"service":"web-intelligence-layer","queueName":"embed","concurrency":2}
+08:21:54 [32minfo[39m [cb9be3b0]: Worker created {"service":"web-intelligence-layer","queueName":"analyze","concurrency":2}
+08:21:54 [32minfo[39m [cb9be3b0]: Pipeline workers started {"service":"web-intelligence-layer","concurrency":10}
+08:21:54 [32minfo[39m [cb9be3b0]: Pipeline workers started {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: Worker created {"service":"web-intelligence-layer","queueName":"dead-letter","concurrency":1}
+08:21:54 [32minfo[39m [cb9be3b0]: Dead-letter worker initialized {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: Dead letter worker started {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: API server started on port 3000 {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: All services started {"service":"web-intelligence-layer"}
+08:21:54 [32minfo[39m [cb9be3b0]: Web Intelligence Layer is running {"service":"web-intelligence-layer","port":3000,"environment":"development","traceId":"1bb1f50b-ec52-4254-afe3-2084a63e876f"}
+08:21:54 [32minfo[39m [cb9be3b0]: API server started on http://0.0.0.0:3000/api/v1 {"service":"web-intelligence-layer"}
+08:22:15 [32minfo[39m [91927d33]: API response {"service":"web-intelligence-layer","method":"GET","path":"/health/live","status":200,"durationMs":5,"traceId":"91927d33-cdf4-4769-8283-3221a50fb77f"}
+08:22:15 [32minfo[39m [9228717c]: API response {"service":"web-intelligence-layer","method":"GET","path":"/health","status":200,"durationMs":76,"traceId":"9228717c-11a3-4f60-b795-e92997214341"}
+08:22:15 [32minfo[39m [2c16147c]: API response {"service":"web-intelligence-layer","method":"GET","path":"/dossiers","status":200,"durationMs":101,"traceId":"2c16147c-10f6-45f3-aa22-b1b9f89cd3d3"}
+9:35:42 AM [tsx] change in ./src/dossier/generator.ts Restarting...
+9:35:47 AM [tsx] Process didn't exit in 5s. Force killing...
+9:57:50 AM [tsx] change in ./src/dossier/generator.ts Process hasn't exited. Killing process...
+9:58:11 AM [tsx] change in ./src/dossier/generator.ts Process hasn't exited. Killing process...
+11:29:27 AM [tsx] change in ./src/scoring/decision-layer.ts Process hasn't exited. Killing process...
+11:31:43 AM [tsx] change in ./src/api/server.ts Process hasn't exited. Killing process...
+11:32:03 AM [tsx] change in ./src/api/server.ts Process hasn't exited. Killing process...
+11:32:17 AM [tsx] change in ./src/api/server.ts Process hasn't exited. Killing process...
+11:32:19 AM [tsx] change in ./src/api/server.ts Process hasn't exited. Killing process...
+11:32:19 AM [tsx] change in ./src/api/server.ts Process hasn't exited. Killing process...
+11:34:43 AM [tsx] change in ./src/api/server.ts Process hasn't exited. Killing process...
+11:34:43 AM [tsx] change in ./src/api/server.ts Process hasn't exited. Killing process...
+11:34:44 AM [tsx] change in ./src/api/server.ts Process hasn't exited. Killing process...
+11:34:44 AM [tsx] change in ./src/scoring/decision-layer.ts Process hasn't exited. Killing process...
+11:52:24 AM [tsx] change in ./src/api/server.ts Process hasn't exited. Killing process...
+11:54:36 AM [tsx] change in ./src/api/server.ts Process hasn't exited. Killing process...

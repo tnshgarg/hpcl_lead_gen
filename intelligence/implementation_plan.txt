@@ -1,0 +1,351 @@
+Core Philosophy
+
+Three non-negotiables:
+
+1. Deterministic Pipelines + Probabilistic Reasoning
+LLM decides meaning, system decides truth boundary.
+
+2. Every step produces artifacts
+No invisible transformations. Everything logged and reproducible.
+
+3. Fail soft, not hard
+If one module dies, the pipeline continues with degraded intelligence — not total collapse.
+
+System Shape (Mental Model)
+Crawler → Document Store → Embeddings → Intent Engine →
+Decision Layer → Dossier → APIs
+         ↑               ↓
+        Logs ← Observability → Metrics
+
+
+Everything flows through queues.
+Nothing calls anything synchronously unless absolutely necessary.
+
+Tech Foundation (TypeScript-Centric)
+
+Runtime:
+
+Node.js LTS
+
+TypeScript strict mode ON
+
+Core Infra:
+
+PostgreSQL (primary store)
+
+Redis (queues + caching)
+
+Vector DB (Qdrant / Weaviate)
+
+BullMQ (job orchestration)
+
+OpenTelemetry (tracing)
+
+Winston / Pino (structured logs)
+
+Gen-AI:
+
+Embedding model
+
+LLM endpoint
+
+Prompt versioning system (stored in DB or Git)
+
+Phase 0 — Stability Infrastructure (Before Any Intelligence)
+
+Goal: Prevent chaos before it starts.
+
+Deliverables
+
+Central logging middleware
+
+Trace IDs for every job
+
+Schema validation with Zod
+
+Environment configuration manager
+
+Retry + backoff utility
+
+Dead-letter queue
+
+Anti-Glitch Mechanisms
+
+No untyped objects allowed.
+
+Every external API wrapped in a timeout.
+
+All async jobs must be idempotent.
+
+If this phase is skipped, future bugs will be ghosts you cannot exorcise.
+
+Phase 1 — Universal Document Acquisition
+
+Goal: Reliable ingestion, not speed.
+
+Features
+
+RSS ingestion
+
+Static HTML scraping
+
+Optional headless rendering
+
+PDF parsing
+
+Robots.txt check
+
+Rate limiting per domain
+
+Safeguards
+
+URL hash deduplication
+
+Max page size limits
+
+Language detection fallback
+
+Content length validation
+
+Failure Strategy
+
+If scraping fails → store error artifact → retry later.
+
+Never drop URLs silently.
+
+Output:
+DocumentRecord { id, url, text, metadata, sourceTrust }
+
+Phase 2 — Document Normalization & Storage
+
+Goal: Make messy text usable.
+
+Tasks
+
+HTML stripping
+
+Boilerplate removal
+
+Sentence segmentation
+
+Encoding normalization
+
+Anti-Glitch
+
+If normalization fails → keep raw text.
+
+Store both raw and cleaned versions.
+
+Phase 3 — Embedding & Vector Layer
+
+Goal: Semantic memory.
+
+Tasks
+
+Generate embeddings asynchronously.
+
+Store vectors with document IDs.
+
+Enable similarity queries.
+
+Safeguards
+
+Cache embeddings.
+
+Version embeddings with model version tags.
+
+If embedding API fails → queue retry.
+
+This prevents semantic drift when models update.
+
+Phase 4 — Gen-AI Intent Engine
+
+Goal: Understand meaning, not keywords.
+
+Components
+
+Prompt templates stored with version numbers.
+
+JSON-schema-enforced outputs.
+
+Temperature near zero for stability.
+
+Anti-Hallucination Strategy
+
+Retrieval-Augmented prompts.
+
+Context window limited to verified content.
+
+Confidence scoring from LLM must be cross-checked.
+
+Failure Strategy
+
+If LLM fails → fallback lightweight classifier.
+
+Never block the pipeline.
+
+Phase 5 — Decision & Scoring Layer
+
+Goal: Convert probability into business-safe judgment.
+
+Inputs
+
+LLM output
+
+Source trust score
+
+Freshness
+
+Signal density
+
+Embedding similarity to known leads
+
+Safeguards
+
+Weighted scoring formula logged per lead.
+
+Threshold gating — low confidence leads marked “Review Needed.”
+
+No silent auto-decisions.
+
+Phase 6 — Dossier Generator
+
+Goal: Produce human-usable artifacts.
+
+Structure
+
+Structured JSON
+
+Human summary text
+
+Reason codes
+
+Confidence explanation
+
+Suggested next action
+
+Anti-Glitch
+
+Templates with fallback phrasing.
+
+LLM summarization only if structured data exists.
+
+Phase 7 — Continuous Learning Loop
+
+Goal: Adapt without chaos.
+
+Mechanisms
+
+Feedback ingestion (accepted/rejected/converted)
+
+Prompt refinement logs
+
+Model performance metrics
+
+Periodic evaluation dataset
+
+Safeguards
+
+No auto-retraining without human approval.
+
+Shadow-mode evaluation before deployment.
+
+Phase 8 — Observability & Monitoring
+
+Goal: See glitches before users do.
+
+Metrics
+
+Crawl success rate
+
+LLM error rate
+
+Lead generation frequency
+
+Latency per pipeline stage
+
+Confidence distribution drift
+
+Tools
+
+Grafana / Prometheus
+
+Alert thresholds
+
+Health endpoints
+
+Phase 9 — Scalability & Resilience
+
+Goal: Growth without meltdown.
+
+Strategies
+
+Horizontal queue workers
+
+Domain-based crawl throttling
+
+Proxy rotation pool
+
+Circuit breakers on external APIs
+
+Graceful shutdown handlers
+
+Anti-Glitch Design Rules
+
+No synchronous chains longer than two steps.
+Every module logs input + output hashes.
+No direct LLM calls from controllers — always through service wrappers.
+All prompts versioned and immutable.
+No magic constants — all thresholds configurable.
+All failures produce artifacts, not silence.
+
+Testing Philosophy (Real-Data Only)
+
+Live URL ingestion tests daily.
+
+Snapshot tests on structured outputs.
+
+Semantic similarity regression checks.
+
+LLM reasoning consistency tests with fixed seeds where possible.
+
+No mocks.
+Artifacts become your ground truth.
+
+
+Embedding Model → HuggingFace e5-small (Local)
+Purpose: semantic similarity, clustering, deduplication, RAG retrieval.
+
+Why e5-small is perfect:
+
+Extremely fast
+
+Very low RAM
+
+Strong semantic accuracy for short/medium text
+
+No API limits
+
+Works great on CPU
+
+Stable + predictable
+
+This becomes your semantic memory layer.
+
+You run it:
+
+Locally
+
+Through a small embedding microservice
+
+Store vectors in Qdrant / Weaviate / SQLite-vector
+
+This ensures:
+
+No rate limits
+
+No external dependency
+
+Deterministic behavior
+
+LLM Models For Usage: gemini-2.5-flash-lite *strict*

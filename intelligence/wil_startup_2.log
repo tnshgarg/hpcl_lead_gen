@@ -1,0 +1,57 @@
+
+> web-intelligence-layer@1.0.0 dev
+> tsx watch src/index.ts
+
+08:21:17 [32minfo[39m [6f7bf420]: Starting Web Intelligence Layer... {"service":"web-intelligence-layer","traceId":"6a008db0-82e3-42a7-a239-803a65777021"}
+08:21:17 [32minfo[39m [6f7bf420]: Initializing infrastructure... {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: PostgreSQL connection pool initialized {"service":"web-intelligence-layer","host":"localhost","port":5432,"database":"web_intelligence"}
+08:21:17 [32minfo[39m [6f7bf420]: PostgreSQL connected {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Redis connected {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Qdrant client initialized {"service":"web-intelligence-layer","host":"127.0.0.1","port":6333}
+08:21:17 [32minfo[39m [6f7bf420]: Qdrant client initialized {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Waiting for Qdrant (attempt 1/30)... {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Redis client connected {"service":"web-intelligence-layer","host":"localhost","port":6379}
+08:21:17 [32minfo[39m [6f7bf420]: Qdrant is ready {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Running database migrations... {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: All migrations completed {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Database migrations completed {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Vector store initialized {"service":"web-intelligence-layer","collection":"documents","dimension":384}
+08:21:17 [32minfo[39m [6f7bf420]: Vector store initialized {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Registering default prompt templates {"service":"web-intelligence-layer","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039"}
+08:21:17 [32minfo[39m [6f7bf420]: Creating prompt template {"service":"web-intelligence-layer","name":"intent-analysis","version":"v1.0.0","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039"}
+08:21:17 [33mwarn[39m [6f7bf420]: Non-retryable error encountered {"service":"web-intelligence-layer","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+08:21:17 [33mwarn[39m [6f7bf420]: Failed to store prompt in database, using cache only {"service":"web-intelligence-layer","name":"intent-analysis","error":"duplicate key value violates unique constraint \"prompts_name_version_key\"","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039"}
+08:21:17 [32minfo[39m [6f7bf420]: Prompt template created {"service":"web-intelligence-layer","id":"87fb77bb-7d58-422b-abe9-f48dacb1ec55","name":"intent-analysis","version":"v1.0.0","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039"}
+08:21:17 [32minfo[39m [6f7bf420]: Creating prompt template {"service":"web-intelligence-layer","name":"relevance-scoring","version":"v1.0.0","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039"}
+08:21:17 [33mwarn[39m [6f7bf420]: Non-retryable error encountered {"service":"web-intelligence-layer","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+08:21:17 [33mwarn[39m [6f7bf420]: Failed to store prompt in database, using cache only {"service":"web-intelligence-layer","name":"relevance-scoring","error":"duplicate key value violates unique constraint \"prompts_name_version_key\"","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039"}
+08:21:17 [32minfo[39m [6f7bf420]: Prompt template created {"service":"web-intelligence-layer","id":"587ca88d-6ab8-4279-926a-d8e4608ce9bb","name":"relevance-scoring","version":"v1.0.0","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039"}
+08:21:17 [32minfo[39m [6f7bf420]: Creating prompt template {"service":"web-intelligence-layer","name":"summarization","version":"v1.0.0","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039"}
+08:21:17 [33mwarn[39m [6f7bf420]: Non-retryable error encountered {"service":"web-intelligence-layer","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+08:21:17 [33mwarn[39m [6f7bf420]: Failed to store prompt in database, using cache only {"service":"web-intelligence-layer","name":"summarization","error":"duplicate key value violates unique constraint \"prompts_name_version_key\"","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039"}
+08:21:17 [32minfo[39m [6f7bf420]: Prompt template created {"service":"web-intelligence-layer","id":"1c98b06b-ac1f-436b-bdc3-0a0905cf5ae0","name":"summarization","version":"v1.0.0","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039"}
+08:21:17 [32minfo[39m [6f7bf420]: Default prompt templates registered {"service":"web-intelligence-layer","traceId":"6f7bf420-d4ab-486a-a51a-4ea49f350039"}
+08:21:17 [32minfo[39m [6f7bf420]: Default prompts registered {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Infrastructure initialization complete {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Starting services... {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Queue created {"service":"web-intelligence-layer","queueName":"crawl"}
+08:21:17 [32minfo[39m [6f7bf420]: Queue created {"service":"web-intelligence-layer","queueName":"normalize"}
+08:21:17 [32minfo[39m [6f7bf420]: Queue created {"service":"web-intelligence-layer","queueName":"embed"}
+08:21:17 [32minfo[39m [6f7bf420]: Queue created {"service":"web-intelligence-layer","queueName":"analyze"}
+08:21:17 [32minfo[39m [6f7bf420]: Pipeline queues initialized {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Pipeline queues initialized {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Worker created {"service":"web-intelligence-layer","queueName":"crawl","concurrency":10}
+08:21:17 [32minfo[39m [6f7bf420]: Worker created {"service":"web-intelligence-layer","queueName":"normalize","concurrency":10}
+08:21:17 [32minfo[39m [6f7bf420]: Worker created {"service":"web-intelligence-layer","queueName":"embed","concurrency":2}
+08:21:17 [32minfo[39m [6f7bf420]: Worker created {"service":"web-intelligence-layer","queueName":"analyze","concurrency":2}
+08:21:17 [32minfo[39m [6f7bf420]: Pipeline workers started {"service":"web-intelligence-layer","concurrency":10}
+08:21:17 [32minfo[39m [6f7bf420]: Pipeline workers started {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Worker created {"service":"web-intelligence-layer","queueName":"dead-letter","concurrency":1}
+08:21:17 [32minfo[39m [6f7bf420]: Dead-letter worker initialized {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Dead letter worker started {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: API server started on port 3000 {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: All services started {"service":"web-intelligence-layer"}
+08:21:17 [32minfo[39m [6f7bf420]: Web Intelligence Layer is running {"service":"web-intelligence-layer","port":3000,"environment":"development","traceId":"6a008db0-82e3-42a7-a239-803a65777021"}
+08:21:17 [31merror[39m [6f7bf420]: Uncaught exception {"service":"web-intelligence-layer","error":"listen EADDRINUSE: address already in use 0.0.0.0:3000","stack":"Error: listen EADDRINUSE: address already in use 0.0.0.0:3000\n    at __node_internal_captureLargerStackTrace (node:internal/errors:497:5)\n    at __node_internal_uvExceptionWithHostPort (node:internal/errors:594:12)\n    at Server.setupListenHandle [as _listen2] (node:net:1872:16)\n    at listenInCluster (node:net:1920:12)\n    at doListen (node:net:2069:7)\n    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)"}
+08:21:17 [32minfo[39m [6f7bf420]: Received uncaughtException. Starting graceful shutdown... {"service":"web-intelligence-layer"}
+08:21:17 [31merror[39m [6f7bf420]: Error during shutdown {"service":"web-intelligence-layer","error":"Server is not running."}

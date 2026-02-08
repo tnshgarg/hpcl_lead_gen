@@ -1,0 +1,20 @@
+{
+  "name": "FieldSalesPro",
+  "displayName": "Field Sales Pro",
+  "android": {
+    "package": "com.anonymous.fieldsalespro"
+  },
+  "ios": {
+    "bundleIdentifier": "com.anonymous.fieldsalespro"
+  },
+  "plugins": [
+    "expo-asset",
+    [
+      "expo-calendar",
+      {
+        "calendarPermission": "The app needs access to your calendar to add follow-up reminders.",
+        "remindersPermission": "The app needs access to your reminders to set follow-up alerts."
+      }
+    ]
+  ]
+}

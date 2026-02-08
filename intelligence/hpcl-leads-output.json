@@ -1,0 +1,314 @@
+{
+  "generatedAt": "2026-02-07T20:32:47.144Z",
+  "session": {
+    "id": "hpcl-1770496027052",
+    "startedAt": "2026-02-07T20:27:07.052Z",
+    "completedAt": "2026-02-07T20:27:45.059Z",
+    "sourcesScraped": 24,
+    "itemsSubmitted": 200
+  },
+  "sources": [
+    {
+      "id": "et-industry",
+      "name": "Economic Times - Industry",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Furnace Oil",
+        "Low Sulphur Heavy Stock",
+        "Bitumen"
+      ]
+    },
+    {
+      "id": "livemint-industry",
+      "name": "Livemint - Industry",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Furnace Oil",
+        "Bitumen",
+        "Hexane (Food Grade)"
+      ]
+    },
+    {
+      "id": "cemnet-news",
+      "name": "CemNet - Cement Industry News",
+      "category": "industry",
+      "relevantProducts": [
+        "Furnace Oil",
+        "Low Sulphur Heavy Stock"
+      ]
+    },
+    {
+      "id": "global-cement",
+      "name": "Global Cement News",
+      "category": "industry",
+      "relevantProducts": [
+        "Furnace Oil",
+        "Low Sulphur Heavy Stock"
+      ]
+    },
+    {
+      "id": "worldsteel",
+      "name": "World Steel Association",
+      "category": "industry",
+      "relevantProducts": [
+        "Furnace Oil"
+      ]
+    },
+    {
+      "id": "shanghai-metals",
+      "name": "Shanghai Metals Market - Industry",
+      "category": "industry",
+      "relevantProducts": [
+        "Furnace Oil",
+        "High Speed Diesel"
+      ]
+    },
+    {
+      "id": "et-energy",
+      "name": "Economic Times - Energy",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Furnace Oil",
+        "Low Sulphur Heavy Stock",
+        "Bitumen"
+      ]
+    },
+    {
+      "id": "et-transport",
+      "name": "Economic Times - Transportation/Logistics",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Motor Spirit",
+        "Bitumen"
+      ]
+    },
+    {
+      "id": "et-auto",
+      "name": "Economic Times - Auto",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Motor Spirit",
+        "Light Diesel Oil"
+      ]
+    },
+    {
+      "id": "bs-companies",
+      "name": "Business Standard - Companies",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Furnace Oil",
+        "Low Sulphur Heavy Stock"
+      ]
+    },
+    {
+      "id": "fe-industry",
+      "name": "Financial Express - Industry",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Furnace Oil",
+        "Low Sulphur Heavy Stock",
+        "Bitumen"
+      ]
+    },
+    {
+      "id": "hbl-logistics",
+      "name": "Hindu Business Line - Logistics",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Marine Fuels (MGO/LSFO)"
+      ]
+    },
+    {
+      "id": "moneycontrol-business",
+      "name": "Moneycontrol - Business",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Furnace Oil",
+        "Low Sulphur Heavy Stock"
+      ]
+    },
+    {
+      "id": "toi-business",
+      "name": "Times of India - Business",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Motor Spirit",
+        "Furnace Oil"
+      ]
+    },
+    {
+      "id": "construction-world",
+      "name": "Construction World",
+      "category": "industry",
+      "relevantProducts": [
+        "Bitumen",
+        "High Speed Diesel",
+        "Furnace Oil"
+      ]
+    },
+    {
+      "id": "cnbc-business",
+      "name": "CNBC TV18 - Business",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Furnace Oil",
+        "Low Sulphur Heavy Stock"
+      ]
+    },
+    {
+      "id": "zeebiz-companies",
+      "name": "Zee Business - Companies",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Furnace Oil"
+      ]
+    },
+    {
+      "id": "livemint-companies",
+      "name": "Livemint - Companies",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Furnace Oil",
+        "Low Sulphur Heavy Stock"
+      ]
+    },
+    {
+      "id": "ndtv-profit",
+      "name": "NDTV Profit",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Furnace Oil"
+      ]
+    },
+    {
+      "id": "indian-express-business",
+      "name": "Indian Express - Business",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Motor Spirit",
+        "Furnace Oil"
+      ]
+    },
+    {
+      "id": "outlook-business",
+      "name": "Outlook Business",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Furnace Oil"
+      ]
+    },
+    {
+      "id": "india-today-business",
+      "name": "India Today - Business",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Motor Spirit",
+        "Furnace Oil"
+      ]
+    },
+    {
+      "id": "news18-business",
+      "name": "News18 - Business",
+      "category": "news",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Furnace Oil"
+      ]
+    },
+    {
+      "id": "projects-today",
+      "name": "Projects Today",
+      "category": "industry",
+      "relevantProducts": [
+        "Bitumen",
+        "High Speed Diesel",
+        "Furnace Oil",
+        "Low Sulphur Heavy Stock"
+      ]
+    },
+    {
+      "id": "cppp-tenders",
+      "name": "Central Public Procurement Portal",
+      "category": "tender",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Furnace Oil",
+        "Bitumen",
+        "Low Sulphur Heavy Stock"
+      ]
+    },
+    {
+      "id": "gem-petroleum",
+      "name": "GeM - Government e-Marketplace",
+      "category": "tender",
+      "relevantProducts": [
+        "High Speed Diesel",
+        "Motor Spirit",
+        "Light Diesel Oil"
+      ]
+    },
+    {
+      "id": "nhai-tenders",
+      "name": "NHAI - Road Tenders",
+      "category": "tender",
+      "relevantProducts": [
+        "Bitumen",
+        "High Speed Diesel"
+      ]
+    },
+    {
+      "id": "indiamart-cement",
+      "name": "IndiaMART - Cement Manufacturers",
+      "category": "directory",
+      "relevantProducts": [
+        "Furnace Oil",
+        "Low Sulphur Heavy Stock"
+      ]
+    },
+    {
+      "id": "indiamart-edibleoil",
+      "name": "IndiaMART - Edible Oil Manufacturers",
+      "category": "directory",
+      "relevantProducts": [
+        "Hexane (Food Grade)"
+      ]
+    },
+    {
+      "id": "indiamart-paints",
+      "name": "IndiaMART - Paint Manufacturers",
+      "category": "directory",
+      "relevantProducts": [
+        "Solvent 1425",
+        "Mineral Turpentine Oil",
+        "Hexane (Technical)"
+      ]
+    }
+  ],
+  "leads": [],
+  "dossiers": [],
+  "summary": {
+    "totalLeads": 0,
+    "totalDossiers": 0,
+    "filteredOut": 0,
+    "hotLeads": 0,
+    "warmLeads": 0,
+    "coldLeads": 0
+  }
+}

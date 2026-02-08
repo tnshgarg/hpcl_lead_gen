@@ -1,0 +1,257 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-08",
+  "description": "HPCL Direct Sales Product Configuration - Used by lead generation and analysis systems",
+  
+  "products": {
+    "industrial_fuels": [
+      {
+        "code": "MS",
+        "name": "Motor Spirit (Bulk Petrol)",
+        "description": "Fleet vehicles, petrol gensets",
+        "targetIndustries": ["logistics", "taxi_fleet", "rentals", "transport"],
+        "keywords": ["petrol", "motor spirit", "gasoline", "fleet", "genset"]
+      },
+      {
+        "code": "HSD",
+        "name": "High Speed Diesel",
+        "description": "Trucks, DG sets, machinery",
+        "targetIndustries": ["transport", "mining", "construction", "captive_power", "logistics"],
+        "keywords": ["diesel", "hsd", "dg set", "generator", "truck", "machinery", "excavator"]
+      },
+      {
+        "code": "LDO",
+        "name": "Light Diesel Oil",
+        "description": "Medium-speed engines, small marine vessels",
+        "targetIndustries": ["marine", "furnaces", "small_vessels"],
+        "keywords": ["light diesel", "ldo", "marine engine", "furnace"]
+      },
+      {
+        "code": "FO",
+        "name": "Furnace Oil",
+        "description": "Boilers, kilns, furnaces",
+        "targetIndustries": ["cement", "steel", "chemicals", "textiles", "paper", "ceramics"],
+        "keywords": ["furnace oil", "boiler", "kiln", "furnace", "heating"]
+      },
+      {
+        "code": "LSHS",
+        "name": "Low Sulphur Heavy Stock",
+        "description": "Low-sulphur heavy fuel for regulated zones",
+        "targetIndustries": ["fertilizers", "captive_power", "regulated_zones", "power_plants"],
+        "keywords": ["lshs", "low sulphur", "heavy stock", "power plant", "fertilizer"]
+      },
+      {
+        "code": "SKO",
+        "name": "Superior Kerosene Oil",
+        "description": "Solvent and feedstock",
+        "targetIndustries": ["chemicals", "paints", "metal_cleaning"],
+        "keywords": ["kerosene", "sko", "solvent", "feedstock", "cleaning"]
+      }
+    ],
+    
+    "specialty_solvents": [
+      {
+        "code": "HEXANE_FOOD",
+        "name": "Hexane (Food Grade)",
+        "description": "Oil extraction for food industry",
+        "targetIndustries": ["edible_oil", "oleochemicals", "solvent_extraction"],
+        "keywords": ["hexane", "food grade", "edible oil", "solvent extraction", "oil mill", "crushing"]
+      },
+      {
+        "code": "HEXANE_TECH",
+        "name": "Hexane (Technical)",
+        "description": "Pharma extraction and industrial use",
+        "targetIndustries": ["pharma", "pharmaceuticals", "chemicals"],
+        "keywords": ["hexane", "technical", "pharma", "extraction", "pharmaceutical"]
+      },
+      {
+        "code": "SOLVENT_1425",
+        "name": "Solvent 1425",
+        "description": "Resin and polymer dissolving",
+        "targetIndustries": ["paints", "inks", "coatings", "adhesives"],
+        "keywords": ["solvent 1425", "resin", "polymer", "paint", "ink", "coating"]
+      },
+      {
+        "code": "MTO",
+        "name": "Mineral Turpentine Oil",
+        "description": "Thinner and cleaning solvent",
+        "targetIndustries": ["paints", "fabrication", "coatings"],
+        "keywords": ["mto", "mineral turpentine", "thinner", "paint thinner", "cleaning"]
+      },
+      {
+        "code": "JBO",
+        "name": "Jute Batch Oil",
+        "description": "Softening jute fiber",
+        "targetIndustries": ["jute_mills", "jute_processing"],
+        "keywords": ["jbo", "jute batch oil", "jute", "jute mill", "fiber softening"]
+      }
+    ],
+    
+    "infrastructure_petrochemicals": [
+      {
+        "code": "BITUMEN",
+        "name": "Bitumen",
+        "description": "Roads, waterproofing, construction",
+        "targetIndustries": ["road_construction", "highways", "infrastructure", "waterproofing"],
+        "keywords": ["bitumen", "asphalt", "road", "highway", "nhai", "pwd", "waterproofing", "expressway"]
+      },
+      {
+        "code": "MARINE_FUELS",
+        "name": "Marine Fuels (MGO/LSFO)",
+        "description": "Ship bunkering",
+        "targetIndustries": ["shipping", "ports", "maritime"],
+        "keywords": ["marine fuel", "mgo", "lsfo", "bunker", "bunkering", "vessel", "ship", "port"]
+      },
+      {
+        "code": "SULPHUR",
+        "name": "Sulphur",
+        "description": "Fertilizer and acid plant feedstock",
+        "targetIndustries": ["fertilizers", "chemicals", "acid_plants"],
+        "keywords": ["sulphur", "sulfur", "fertilizer", "acid", "dap", "urea"]
+      },
+      {
+        "code": "PROPYLENE",
+        "name": "Propylene",
+        "description": "Polymer feedstock",
+        "targetIndustries": ["plastics", "polymers", "petrochemicals"],
+        "keywords": ["propylene", "polymer", "plastic", "pp", "polypropylene", "petrochemical"]
+      }
+    ]
+  },
+  
+  "industryMapping": {
+    "edible_oil": {
+      "primaryProducts": ["HEXANE_FOOD"],
+      "secondaryProducts": ["HSD"],
+      "keywords": ["edible oil", "solvent extraction", "oil mill", "crushing", "refinery", "mustard oil", "soybean", "groundnut"]
+    },
+    "jute_processing": {
+      "primaryProducts": ["JBO"],
+      "secondaryProducts": ["HSD"],
+      "keywords": ["jute", "jute mill", "jute processing", "fiber", "gunny bag"]
+    },
+    "paints_coatings": {
+      "primaryProducts": ["SOLVENT_1425", "MTO", "HEXANE_TECH"],
+      "secondaryProducts": ["SKO"],
+      "keywords": ["paint", "coating", "ink", "pigment", "resin", "thinner", "adhesive"]
+    },
+    "captive_power": {
+      "primaryProducts": ["FO", "LSHS", "HSD"],
+      "secondaryProducts": [],
+      "keywords": ["captive power", "cpp", "power plant", "dg set", "generator", "boiler"]
+    },
+    "road_construction": {
+      "primaryProducts": ["BITUMEN"],
+      "secondaryProducts": ["HSD"],
+      "keywords": ["road", "highway", "nhai", "pwd", "expressway", "asphalt", "construction", "infrastructure"]
+    },
+    "shipping_ports": {
+      "primaryProducts": ["MARINE_FUELS"],
+      "secondaryProducts": ["HSD", "LDO"],
+      "keywords": ["shipping", "port", "vessel", "bunker", "maritime", "cargo", "container"]
+    },
+    "fertilizers": {
+      "primaryProducts": ["LSHS", "SULPHUR"],
+      "secondaryProducts": ["FO"],
+      "keywords": ["fertilizer", "urea", "dap", "ammonia", "phosphate"]
+    },
+    "cement": {
+      "primaryProducts": ["FO", "LSHS"],
+      "secondaryProducts": ["HSD"],
+      "keywords": ["cement", "clinker", "kiln", "grinding", "limestone", "cement plant"]
+    },
+    "steel": {
+      "primaryProducts": ["FO"],
+      "secondaryProducts": ["HSD", "LDO"],
+      "keywords": ["steel", "iron", "rolling mill", "blast furnace", "re-rolling", "sponge iron", "metallurgy"]
+    },
+    "pharma": {
+      "primaryProducts": ["HEXANE_TECH"],
+      "secondaryProducts": ["SKO"],
+      "keywords": ["pharma", "pharmaceutical", "api", "formulation", "extraction"]
+    },
+    "plastics_polymers": {
+      "primaryProducts": ["PROPYLENE"],
+      "secondaryProducts": [],
+      "keywords": ["plastic", "polymer", "polypropylene", "pp", "petrochemical", "molding"]
+    },
+    "logistics_transport": {
+      "primaryProducts": ["HSD", "MS"],
+      "secondaryProducts": [],
+      "keywords": ["logistics", "transport", "fleet", "truck", "vehicle", "delivery"]
+    },
+    "mining": {
+      "primaryProducts": ["HSD"],
+      "secondaryProducts": ["LDO"],
+      "keywords": ["mining", "quarry", "excavation", "ore", "mineral", "heavy equipment"]
+    },
+    "textiles": {
+      "primaryProducts": ["FO"],
+      "secondaryProducts": ["HSD"],
+      "keywords": ["textile", "fabric", "dyeing", "spinning", "weaving"]
+    }
+  },
+  
+  "signalTaxonomy": {
+    "high_confidence": {
+      "description": "Explicit procurement signals - direct buying intent",
+      "weight": 0.9,
+      "keywords": [
+        "tender for", "tender notice", "tender invitation", "tender reference",
+        "rfq for", "request for quotation for", "rfq reference",
+        "eoi for", "expression of interest for",
+        "nit for", "notice inviting tender for",
+        "bid invitation for", "bid submission",
+        "annual rate contract for", "arc for", "rate contract for",
+        "invites bids", "invites quotation", "invites tender",
+        "last date for submission", "bid submission deadline", "emd"
+      ]
+    },
+    "medium_confidence": {
+      "description": "Implicit demand signals - expansion/capacity",
+      "weight": 0.6,
+      "keywords": [
+        "capacity expansion", "new plant", "greenfield", "brownfield",
+        "expansion project", "new unit", "commissioning", "upcoming plant",
+        "under construction", "project announcement", "capex", "investment",
+        "new factory", "manufacturing unit", "production capacity",
+        "boiler installation", "furnace upgrade", "kiln installation",
+        "adding capacity", "expansion at", "announces expansion",
+        "rs crore investment", "crore expansion", "mtpa capacity"
+      ]
+    },
+    "low_confidence": {
+      "description": "Operational signals - company profiles",
+      "weight": 0.3,
+      "keywords": [
+        "manufacturer of", "we operate", "fleet size", "our production facility",
+        "industrial unit", "company profile", "about us", "our facilities",
+        "plant location", "manufacturing capacity", "annual production",
+        "interested suppliers may", "contact our procurement"
+      ]
+    }
+  },
+  
+  "scoringRules": {
+    "tender_explicit": {"minScore": 85, "maxScore": 95},
+    "expansion_news": {"minScore": 60, "maxScore": 80},
+    "company_profile": {"minScore": 30, "maxScore": 50},
+    "recency_bonus": {
+      "within_7_days": 10,
+      "within_30_days": 5,
+      "older": 0
+    },
+    "company_size_bonus": {
+      "large": 10,
+      "medium": 5,
+      "small": 0
+    }
+  },
+  
+  "blockedIndustries": [
+    "banking", "telecom", "aviation", "airlines", "insurance",
+    "entertainment", "media", "hospitality", "hotels", "tourism",
+    "fashion", "jewellery", "cosmetics", "luxury", "real_estate",
+    "it_services", "software", "cricket", "sports"
+  ]
+}
