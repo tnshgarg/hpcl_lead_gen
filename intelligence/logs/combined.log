@@ -186,3 +186,66 @@
 {"timestamp":"I8O","level":"info","traceId":"ff775e48-9c2b-457d-bcae-379326b059bb","message":"API response","service":"web-intelligence-layer","method":"GET","path":"/dossiers","status":200,"durationMs":364}
 {"timestamp":"I7O","level":"info","traceId":"8b56e85d-6096-4632-a8bd-e1195f9348af","message":"API response","service":"web-intelligence-layer","method":"GET","path":"/dossiers","status":200,"durationMs":1309}
 {"timestamp":"I8O","level":"info","traceId":"150de333-4914-4b02-97f0-06b64620d57d","message":"API response","service":"web-intelligence-layer","method":"GET","path":"/dossiers","status":200,"durationMs":830}
+{"timestamp":"I7O","level":"info","message":"Received SIGINT. Starting graceful shutdown...","service":"web-intelligence-layer"}
+{"timestamp":"I8O","level":"info","message":"API server stopped","service":"web-intelligence-layer"}
+{"timestamp":"I8O","level":"info","message":"API server stopped","service":"web-intelligence-layer"}
+{"timestamp":"I8O","level":"info","message":"Shutting down pipeline...","service":"web-intelligence-layer"}
+{"timestamp":"I8O","level":"info","message":"Closing all queues and workers...","service":"web-intelligence-layer"}
+{"timestamp":"I8O","level":"warn","message":"Shutdown already in progress","service":"web-intelligence-layer"}
+{"timestamp":"I9O","level":"info","message":"All queues and workers closed","service":"web-intelligence-layer"}
+{"timestamp":"I9O","level":"info","message":"Pipeline shutdown complete","service":"web-intelligence-layer"}
+{"timestamp":"I9O","level":"info","message":"Pipeline workers stopped","service":"web-intelligence-layer"}
+{"timestamp":"I9O","level":"info","message":"PostgreSQL connection pool closed","service":"web-intelligence-layer"}
+{"timestamp":"I9O","level":"info","message":"PostgreSQL connection closed","service":"web-intelligence-layer"}
+{"timestamp":"I9O","level":"info","message":"Redis client closed","service":"web-intelligence-layer"}
+{"timestamp":"I1O","level":"info","traceId":"24c39f74-282e-4d49-9a3f-a777eaf14d0a","message":"Starting Web Intelligence Layer...","service":"web-intelligence-layer"}
+{"timestamp":"I1O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Initializing infrastructure...","service":"web-intelligence-layer"}
+{"timestamp":"I1O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"PostgreSQL connection pool initialized","service":"web-intelligence-layer","host":"localhost","port":5432,"database":"web_intelligence"}
+{"timestamp":"I1O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"PostgreSQL connected","service":"web-intelligence-layer"}
+{"timestamp":"I1O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Redis connected","service":"web-intelligence-layer"}
+{"timestamp":"I1O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Qdrant client initialized","service":"web-intelligence-layer","host":"127.0.0.1","port":6333}
+{"timestamp":"I1O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Qdrant client initialized","service":"web-intelligence-layer"}
+{"timestamp":"I1O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Waiting for Qdrant (attempt 1/30)...","service":"web-intelligence-layer"}
+{"timestamp":"I1O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Redis client connected","service":"web-intelligence-layer","host":"localhost","port":6379}
+{"timestamp":"I3O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Qdrant is ready","service":"web-intelligence-layer"}
+{"timestamp":"I3O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Running database migrations...","service":"web-intelligence-layer"}
+{"timestamp":"I5O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"All migrations completed","service":"web-intelligence-layer"}
+{"timestamp":"I5O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Database migrations completed","service":"web-intelligence-layer"}
+{"timestamp":"I5O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Vector store initialized","service":"web-intelligence-layer","collection":"documents","dimension":384}
+{"timestamp":"I5O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Vector store initialized","service":"web-intelligence-layer"}
+{"timestamp":"I5O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Registering default prompt templates","service":"web-intelligence-layer"}
+{"timestamp":"I5O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Creating prompt template","service":"web-intelligence-layer","name":"intent-analysis","version":"v1.0.0"}
+{"timestamp":"I6O","level":"warn","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Non-retryable error encountered","service":"web-intelligence-layer","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+{"timestamp":"I6O","level":"warn","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Failed to store prompt in database, using cache only","service":"web-intelligence-layer","name":"intent-analysis","error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Prompt template created","service":"web-intelligence-layer","id":"59cc4c84-aa34-40af-bf4c-da6783301bc0","name":"intent-analysis","version":"v1.0.0"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Creating prompt template","service":"web-intelligence-layer","name":"relevance-scoring","version":"v1.0.0"}
+{"timestamp":"I6O","level":"warn","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Non-retryable error encountered","service":"web-intelligence-layer","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+{"timestamp":"I6O","level":"warn","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Failed to store prompt in database, using cache only","service":"web-intelligence-layer","name":"relevance-scoring","error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Prompt template created","service":"web-intelligence-layer","id":"202feb8a-80c2-4874-b8cb-e8bc2dc15195","name":"relevance-scoring","version":"v1.0.0"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Creating prompt template","service":"web-intelligence-layer","name":"summarization","version":"v1.0.0"}
+{"timestamp":"I6O","level":"warn","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Non-retryable error encountered","service":"web-intelligence-layer","attempt":1,"error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+{"timestamp":"I6O","level":"warn","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Failed to store prompt in database, using cache only","service":"web-intelligence-layer","name":"summarization","error":"duplicate key value violates unique constraint \"prompts_name_version_key\""}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Prompt template created","service":"web-intelligence-layer","id":"107906e6-7eea-4f02-8efa-05c961c3fcc3","name":"summarization","version":"v1.0.0"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Default prompt templates registered","service":"web-intelligence-layer"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Default prompts registered","service":"web-intelligence-layer"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Infrastructure initialization complete","service":"web-intelligence-layer"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Starting services...","service":"web-intelligence-layer"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Queue created","service":"web-intelligence-layer","queueName":"crawl"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Queue created","service":"web-intelligence-layer","queueName":"normalize"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Queue created","service":"web-intelligence-layer","queueName":"embed"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Queue created","service":"web-intelligence-layer","queueName":"analyze"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Pipeline queues initialized","service":"web-intelligence-layer"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Pipeline queues initialized","service":"web-intelligence-layer"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Worker created","service":"web-intelligence-layer","queueName":"crawl","concurrency":10}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Worker created","service":"web-intelligence-layer","queueName":"normalize","concurrency":10}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Worker created","service":"web-intelligence-layer","queueName":"embed","concurrency":2}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Worker created","service":"web-intelligence-layer","queueName":"analyze","concurrency":2}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Pipeline workers started","service":"web-intelligence-layer","concurrency":10}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Pipeline workers started","service":"web-intelligence-layer"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Worker created","service":"web-intelligence-layer","queueName":"dead-letter","concurrency":1}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Dead-letter worker initialized","service":"web-intelligence-layer"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"Dead letter worker started","service":"web-intelligence-layer"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"API server started on port 3000","service":"web-intelligence-layer"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"All services started","service":"web-intelligence-layer"}
+{"timestamp":"I6O","level":"info","traceId":"24c39f74-282e-4d49-9a3f-a777eaf14d0a","message":"Web Intelligence Layer is running","service":"web-intelligence-layer","port":3000,"environment":"development"}
+{"timestamp":"I6O","level":"info","traceId":"71396863-069f-44f0-8c42-0454654d39e4","message":"API server started on http://0.0.0.0:3000/api/v1","service":"web-intelligence-layer"}

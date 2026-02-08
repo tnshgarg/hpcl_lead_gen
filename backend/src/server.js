@@ -18,7 +18,7 @@ const { initializeClient } = require('./services/whatsappService');
 const { initializeEmailService } = require('./services/emailService');
 
 // Start services (Non-blocking)
-initializeClient().catch(err => console.error('WhatsApp init failed:', err));
+// initializeClient().catch(err => console.error('WhatsApp init failed:', err));
 initializeEmailService();
 
 // Middleware

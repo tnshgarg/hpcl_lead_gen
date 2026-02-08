@@ -1,4 +1,4 @@
-import pg from '../../node_modules/@types/pg/index.js';
+import pg from 'pg';
 import { env, getPostgresConnectionString } from '../config/env.js';
 import { logger } from '../lib/logger.js';
 import { withRetry, isNetworkError } from '../lib/retry.js';
